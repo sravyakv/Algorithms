@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<stdlib.h>
+void toh(int s,int m,int d,int n);
+int main()
+{
+int n;
+printf("number of source plates\n");
+scanf("%d",&n);
+toh('a','b','c',n);
+return 0;
+}
+void toh(int s,int m,int d,int n)
+{
+if(n>0)
+{
+toh(s,d,m,n-1);
+printf("\nthe plate is moved from %c to %c\n",s,d);
+toh(d,m,s,n-1);
+}
+}

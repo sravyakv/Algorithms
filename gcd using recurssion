@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<stdlib.h>
+int gcd(int m,int n);
+int main()
+{
+int m,a,n,i;
+printf("enter the values of m and n");
+scanf("%d %d",&m,&n);
+a=gcd(m,n);
+printf("the gcd is %d",a);
+return 0;
+}
+int gcd(int m,int n)
+{
+int a,rem;
+rem=m%n;
+while(rem!=0)
+{
+m=n;
+n=rem;
+rem=m%n;
+a=gcd(m,n);
+}
+return n;
+}
